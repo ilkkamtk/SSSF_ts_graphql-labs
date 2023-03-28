@@ -16,7 +16,7 @@ const speciesSchema = new mongoose.Schema<Species>({
   },
   image: {
     type: String,
-    // required: true,
+    required: true,
   },
   location: {
     type: {
