@@ -9,9 +9,14 @@ export default {
   },
   Mutation: {
     addAnimal: async (_parent: undefined, args: Animal) => {
-      console.log(args);
       const animal = new animalModel(args);
       return await animal.save();
+    },
+    modifyAnimal: async (_parent: undefined, args: Animal) => {
+      console.log(args);
+      return await animalModel.findByIdAndUpdate(args.id, args, {
+        new: true,
+      });
     },
   },
 };
