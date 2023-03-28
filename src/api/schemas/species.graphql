@@ -2,4 +2,27 @@ type Species {
   id: ID
   species_name: String
   category: Category
+  location: Point
+}
+
+type Point {
+  type: GeoJSONPoint
+  coordinates: [Float]
+}
+
+enum GeoJSONPoint {
+  POINT
+}
+
+input InputPoint {
+  type: GeoJSONPoint!
+  coordinates: [Float]!
+}
+
+type Mutation {
+  addSpecies(
+    species_name: String!
+    category: ID!
+    location: InputPoint!
+  ): Species
 }

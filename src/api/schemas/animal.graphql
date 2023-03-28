@@ -9,3 +9,7 @@ type Animal {
 type Query {
   animals: [Animal]
 }
+
+type Mutation {
+  addAnimal(animal_name: String!, species: ID!): Animal
+}
