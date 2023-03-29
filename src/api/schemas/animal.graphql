@@ -5,6 +5,7 @@ type Animal {
   animal_name: String!
   species: Species!
   image: String
+  location: Point
 }
 
 type Query {
