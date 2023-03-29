@@ -10,6 +10,14 @@ export default {
       return await speciesModel.findById(parent.species);
     },
   },
+  Query: {
+    species: async () => {
+      return await speciesModel.find();
+    },
+    speciesById: async (_parent: undefined, args: Species) => {
+      return await speciesModel.findById(args.id);
+    },
+  },
   Mutation: {
     addSpecies: async (_parent: undefined, args: Species) => {
       console.log(args);
