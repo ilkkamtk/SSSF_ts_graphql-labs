@@ -6,6 +6,7 @@ type Animal {
   species: Species!
   image: String
   location: Point
+  birthdate: DateTime
 }
 
 type Query {
@@ -14,7 +15,18 @@ type Query {
 }
 
 type Mutation {
-  addAnimal(animal_name: String!, species: ID!): Animal
-  modifyAnimal(id: ID!, animal_name: String, species: ID): Animal
+  addAnimal(
+    animal_name: String!
+    species: ID!
+    image: String!
+    location: InputPoint!
+    birthdate: DateTime!
+  ): Animal
+  modifyAnimal(
+    id: ID!
+    animal_name: String
+    species: ID
+    birthdate: DateTime
+  ): Animal
   deleteAnimal(id: ID!): Animal
 }
