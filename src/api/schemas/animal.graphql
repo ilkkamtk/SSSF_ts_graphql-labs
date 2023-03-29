@@ -9,9 +9,15 @@ type Animal {
   birthdate: DateTime
 }
 
+input Coordinates {
+  lat: Float!
+  lng: Float!
+}
+
 type Query {
   animals: [Animal]
   animalById(id: ID!): Animal
+  animalsByArea(topRight: Coordinates!, bottomLeft: Coordinates!): [Animal]
 }
 
 type Mutation {
